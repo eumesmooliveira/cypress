@@ -8,20 +8,17 @@ module.exports = defineConfig({
       mochaFile: 'cypress/reports/junit/results-[hash].xml'
     },
     cypressMochawesomeReporterReporterOptions: {
-      chats: true,
-      reportPageTitle: 'Relatório de Testes',
+      charts: true,
+      reportPageTitle: 'Relatório de testes',
       embeddedScreenshots: true,
       inlineAssets: true,
       saveAllAttempts: false
-    },
+    }
   },
   chromeWebSecurity: false,
-  allowCypressEnv: false,
-
   e2e: {
-    baseUrl: 'https://www.saucedemo.com/',
     setupNodeEvents(on, config) {
-      require('cypress-mochawesome-reporter/plugin')(on);
+      require('cypress-mochawesome-reporter/plugin')(on)
     },
   },
 });
